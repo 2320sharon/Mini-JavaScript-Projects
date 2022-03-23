@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+.wrapper {
+  height: 100vh;
+  /* The wrapper is going to scroll instead of the body, so it needs to be
+  size of the screen. */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* hides the scrollbars in the x direction */
+  perspective: 10px;
+  /* tells how big z index is. This is 10px away from screen.
+  +10px z index is close to me aka away from screen
+  -10px z index is far from me aka deep into the screen */
+}
+
+.title {
+  font-size: 7rem;
+  color: #fff;
+  text-shadow: 0 0 5px black;
+}
+
+.section {
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+}
