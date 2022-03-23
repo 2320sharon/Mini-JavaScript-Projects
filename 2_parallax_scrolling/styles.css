@@ -14,13 +14,48 @@ body {
   -10px z index is far from me aka deep into the screen */
 }
 
+/* Use the header to make it so that all the items are stacked on top of each other */
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+  /* puts all the elements behind the section */
+}
+
+.background {
+  /* This doesn't scoll at the same pace because its farther away */
+  /* transform: translateZ(-10px) scale(2); */
+  transform: translateZ(-10px) scale(2);
+  /* This puts the image very far away from use b/c perspective = 10px
+  which shrinks it to half its size. To compensate scale it by 2 so its in the
+  background without being small */
+}
+
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  /* img covers the entire box without breaking the aspect ratio */
+}
+
 .title {
   font-size: 7rem;
   color: #fff;
   text-shadow: 0 0 5px black;
 }
 
-.section {
+section {
   font-size: 2rem;
   padding: 2rem;
   background-color: #333;
